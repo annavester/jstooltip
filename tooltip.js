@@ -18,6 +18,7 @@ var Tooltip = function (){
 
     this.init = function(options) {
         var i = 0, cur;
+
         config = merge(options);
         elements = polyGetByClassName('tooltip');
 
@@ -47,8 +48,8 @@ var Tooltip = function (){
             tooltipPosY = event.pageY,
             tooltipContent;
 
-            tooltipContainer.className = config.containerClassName;
-            tooltipContainer.style.cssText = 'opacity:'+config.opacity+';background-color:'+config.bgColor+';width:'+config.width+';height:'+config.height+';color:'+config.txtColor+';left:'+tooltipPosX+'px;top:'+tooltipPosY+'px;'+config.customCSS+'';
+        tooltipContainer.className = config.containerClassName;
+        tooltipContainer.style.cssText = 'opacity:'+config.opacity+';background-color:'+config.bgColor+';width:'+config.width+';height:'+config.height+';color:'+config.txtColor+';left:'+tooltipPosX+'px;top:'+tooltipPosY+'px;'+config.customCSS+'';
 
         if (tooltipType === "element") {
             /*
