@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>Tooltip</title>
+    <link rel="stylesheet" href="tooltip.css" media="screen" />
+    <style>
+        body{font:14px/1.2em 'Helvetica','Calibri','Arial',sans-serif;position:relative;padding:0;margin:0;}
+        body > div {width:500px;margin: 20px auto;}
+        .hide{display:none;}
+        h1{font-size:1.2em;line-height:1.6em;margin:0;}
+        h2{font-size:1.1em;line-height:1.4em;margin:0;}
+        p{margin:10px 0 0 0;}
+    </style>
+</head>
+<body>
+    <div class="more test">
+        <p>This is a <span class="tooltip" data-tt-type="attr" title="This is tooltip content">regular</span> sentence that will have a tooltip.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis dolor et neque scelerisque euismod. Proin sit amet purus massa, nec eleifend magna. Fusce fermentum bibendum tincidunt. Quisque est diam, ultricies et sollicitudin at, bibendum sit amet velit. Cras in ante ac tortor tincidunt venenatis id pharetra augue. Ut viverra, lacus eu egestas tristique, purus dui interdum est, nec feugiat mi augue vel dolor. Nunc malesuada auctor lorem eu feugiat. Etiam metus ligula, luctus in eleifend vitae, ullamcorper non nibh. Sed rhoncus lorem at enim ullamcorper faucibus. Cras sit amet est justo, quis convallis justo. Vestibulum lacus libero, ultrices ullamcorper scelerisque sit amet, congue adipiscing ipsum. Suspendisse volutpat felis sed libero venenatis ac dapibus quam rhoncus. Phasellus lorem turpis, semper at eleifend ac, mattis eget metus. Aenean vel mauris id odio sollicitudin lobortis. Vivamus gravida fermentum augue, quis ultricies magna semper eget. Praesent odio sapien, scelerisque nec tempor viverra, varius nec lectus.</p>
+        <p>Phasellus scelerisque massa in lacus ultricies ut mattis dolor feugiat. Sed dignissim, ante at tempus feugiat, lorem nibh aliquet erat, vel suscipit ipsum quam sed neque. Sed vel risus a tellus cursus auctor quis quis purus. Donec condimentum posuere dui, vitae <a href="#" class="tooltip" data-tt-type="element">asdgj</a> pellentesque erat hendrerit eu. Nam et justo nunc. Mauris fringilla ipsum at orci blandit tristique. Pellentesque vel libero id lectus pretium mollis. Suspendisse luctus elementum arcu, feugiat sodales diam dignissim ut. Donec felis arcu, porttitor vel hendrerit ac, fringilla id nisi. Nulla eget purus id lorem mollis euismod. Mauris venenatis vestibulum neque, sit amet luctus nisl posuere non. Phasellus tincidunt placerat mi mattis feugiat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam eu orci sit amet turpis porta feugiat eget ac sem. Suspendisse in urna turpis. In hac habitasse platea dictumst.</p>
+        <div class="hide">
+            <h2>Tooltip 2</h2>
+            <p>pellentesque erat hendrerit eu. Nam et justo nunc. Mauris fringilla ipsum at orci blandit tristique. Pellentesque vel libero id lectus pretium mollis.</p>
+        </div>
+    </div>
+
+    <script src="tooltip.js"></script>
+    <script>
+        window.onload = function() {
+
+            var tt = new Tooltip();
+            tt.init({
+                "opacity":".95",
+                "bgColor":"#333",
+                "txtColor": "#fff",
+                "height": "auto",
+                "customCSS": "border-radius:5px;"
+            });
+        }
+    </script>
+</body>
+</html>
