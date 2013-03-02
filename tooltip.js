@@ -4,7 +4,7 @@ var Tooltip = function (){
     var bodyNode = document.getElementsByTagName("body")[0],
         that = this,
         elements = this.elements,
-        config = null;
+        config = undefined;
 
     this.defaults = {
         opacity: '1',
@@ -92,7 +92,7 @@ var Tooltip = function (){
     function getElementsByClassName(className){
         var allNodes = bodyNode.getElementsByTagName('*'),
             nodesLen = allNodes.length,
-            classes = null,
+            classes = undefined,
             nodes = [],
             i = 0,
             cur;
