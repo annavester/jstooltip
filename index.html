@@ -1,54 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>JsTooltip by annavester</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
     <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <title>JsTooltip by annavester</title>
   </head>
+
   <body>
-
-      <header>
+    <header>
+      <div class="inner">
         <h1>JsTooltip</h1>
-        <p>A simple javascript tooltip widget</p>
-      </header>
+        <h2>A simple javascript tooltip widget</h2>
+        <a href="https://github.com/annavester/jstooltip" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/annavester/jstooltip" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/annavester/jstooltip/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/annavester/jstooltip/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h3>JS Tooltip.</h3>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>JS Tooltip.</h1>
 
 <p>No extra libraries required.</p>
-      </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/annavester">annavester</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
-      </footer>
+
+<h2>Two ways to make it work:</h2>
+
+<h3>Example 1:</h3>
+
+<p>This is a <a title="Text Tooltip 
+Content">tooltip</a>.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>This is a <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"tooltip"</span> <span class="na">data-tt-type=</span><span class="s">"attr"</span> <span class="na">title=</span><span class="s">"Text Tooltip </span>
+<span class="s">Content"</span><span class="nt">&gt;</span>tooltip<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+
+<p>Example 2:</p>
+
+<p>This is a <a>tooltip</a>.</p>
+
+<div>
+    <h2>HTML Tooltip Content</h2>
+    <p>Pellentesque erat hendrerit eu. Nam et justo nunc. Mauris fringilla 
+ipsum at orci blandit tristique.</p>
+</div>
+
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>This is a <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"tooltip"</span> <span class="na">data-tt-type=</span><span class="s">"element"</span><span class="nt">&gt;</span>tooltip<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hide"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>HTML Tooltip Content<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Pellentesque erat hendrerit eu. Nam et justo nunc. Mauris fringilla 
+ipsum at orci blandit tristique.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/annavester/jstooltip/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/annavester/jstooltip/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/annavester/jstooltip"></a> is maintained by <a href="https://github.com/annavester">annavester</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+  
   </body>
 </html>
