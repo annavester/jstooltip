@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
+      <link rel="stylesheet" href="tooltip.css" media="screen" />
+      <style>
+          body{font:14px/1.2em 'Helvetica','Calibri','Arial',sans-serif;position:relative;padding:0;margin:0;}
+          body > div {width:500px;margin: 20px auto;}
+          .hide{display:none;}
+          h1{font-size:1.2em;line-height:1.6em;margin:0;}
+          h2{font-size:1.1em;line-height:1.4em;margin:0;}
+          p{margin:10px 0 0 0;}
+      </style>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -49,6 +58,19 @@
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+      <script src="tooltip.js"></script>
+      <script>
+          window.onload = function() {
+
+              var tt = new Tooltip();
+              tt.init({
+                  "opacity":".95",
+                  "bgColor":"#333",
+                  "txtColor": "#fff",
+                  "height": "auto",
+                  "customCSS": "border-radius:5px;"
+              });
+          }
+      </script>
   </body>
 </html>
