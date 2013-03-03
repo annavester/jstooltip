@@ -1,2 +1,5 @@
-.tooltip-container{padding:10px;position:absolute;margin:0;}
+.tooltip-container{padding:10px;position:absolute;margin:0;opacity:1;border-radius:5px;
+    background-color:#333;width:200px;height:auto;color:#efefef;}
+    .tooltip-container .hideTooltip{cursor:pointer;background:#989898;text-align:center;color:#efefef;border-radius:10px;position:absolute;
+        top:-5px;right:-5px;display:block;width:20px;height:20px;line-height:18px;font-size:12px;}
 .tooltip{border-bottom:1px dashed #ccc;cursor:pointer;}

@@ -93,15 +93,8 @@ ipsum at orci blandit tristique.<span class="nt">&lt;/p&gt;</span>
     <script src="tooltip.js"></script>
     <script>
         window.onload = function() {
-
             var tt = new Tooltip();
-            tt.init({
-                "opacity":".95",
-                "bgColor":"#333",
-                "txtColor": "#fff",
-                "height": "auto",
-                "customCSS": "border-radius:5px;"
-            });
+            tt.init({"opacity":".95", "hideOnMouseOut": false});
         }
     </script>
   </body>
