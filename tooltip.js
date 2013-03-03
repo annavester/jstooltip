@@ -11,7 +11,7 @@ var TooltipManager = (function () {
             nodes = container.getElementsByClassName(className);
             length = nodes.length;
             if(length !== 0){
-                fragment = self.createFragment(onMouseOutMode);
+                fragment = self.createFragment(!!onMouseOutMode);
                 for(key = 0; key < length; key++) {
                     self.createTooltip(nodes[key], fragment);
                 }
