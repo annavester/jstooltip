@@ -37,7 +37,7 @@ var TooltipManager = (function () {
             };
             node.addEventListener('mouseover', function(event) {
                 var parentNode, nextNode;
-                this.preventDefault();
+                event.preventDefault();
                 parentNode = this.parentNode;
                 nextNode = this.nextSibling;
                 if(typeof fragment !== 'object') {
