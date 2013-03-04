@@ -1,22 +1,34 @@
 var TooltipManager = (function () {
     'use strict';
     var self = {
+        fragment: undefined,
         /*
-            @param Node container
+            @name TooltipManager
+            @info The main method, adds an onmouseover event on the selected nodes, based on a class name
+            @param Node container (e.g. : document.body)
             @param string className
-            @param boolean onMouseOutMode
+            @param boolean onMouseOutMode [optional]
+            @return void
         */
         TooltipManager: function TooltipManager(container, className, onMouseOutMode) {
-            var nodes, length, key, fragment;
+            var nodes, length, key;
             nodes = container.getElementsByClassName(className);
             length = nodes.length;
-            if(length !== 0){
-                fragment = self.createFragment(!!onMouseOutMode);
+            if(length !== 0) {
+                if(self.fragment === undefined) {
+                    self.createFragment(!!onMouseOutMode);
+                }
                 for(key = 0; key < length; key++) {
-                    self.createTooltip(nodes[key], fragment);
+                    self.createTooltip(nodes[key]);
                 }
             }
         },
+        /*
+            @name createFragment
+            @info creates a generic fragment
+            @param boolean onMouseOutMode
+            @return void
+        */
         createFragment: function createFragment(onMouseOutMode) {
             var fragment, tooltip, closer;
             fragment = document.createDocumentFragment();
@@ -28,11 +40,17 @@ var TooltipManager = (function () {
                 closer.appendChild(document.createTextNode('x'));
                 tooltip.appendChild(closer);
             }
-            return fragment;
+            self.fragment = fragment;
         },
-        createTooltip: function createTooltip(node, defaultFragment) {
+        /*
+            @name createTooltip
+            @info creates an onmouseover tooltip on an element
+            @param Node node
+            @return void
+        */
+        createTooltip: function createTooltip(node) {
             var fragment, tooltip, closer, close;
-            close = function close(){
+            close = function close() {
                 fragment.appendChild(tooltip);
             };
             node.addEventListener('mouseover', function(event) {
@@ -41,7 +59,7 @@ var TooltipManager = (function () {
                 parentNode = this.parentNode;
                 nextNode = this.nextSibling;
                 if(typeof fragment !== 'object') {
-                    fragment = defaultFragment.cloneNode(true);
+                    fragment = self.fragment.cloneNode(true);
                     tooltip = fragment.firstChild;
                     tooltip.firstChild.nodeValue = this.title;
                     closer = tooltip.getElementsByTagName('button')[0];
