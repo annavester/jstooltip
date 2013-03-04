@@ -32,10 +32,12 @@ var TooltipManager = (function () {
         createFragment: function createFragment(onMouseOutMode) {
             var fragment, tooltip, closer;
             fragment = document.createDocumentFragment();
+            // uses a span (preferable to a div, semantically)
             tooltip = document.createElement('span');
             fragment.appendChild(tooltip);
             tooltip.appendChild(document.createTextNode());
-            if(onMouseOutMode) {
+            if(!onMouseOutMode) {
+                // uses a button (preferable to an anchor, semantically)
                 closer = document.createElement('button');
                 closer.appendChild(document.createTextNode('x'));
                 tooltip.appendChild(closer);
@@ -50,19 +52,25 @@ var TooltipManager = (function () {
         */
         createTooltip: function createTooltip(node) {
             var fragment, tooltip, closer, close;
+            // the closer function (triggered on an onmouseout event or an onclick event on the x button)
             close = function close() {
+                // the tooltip returns in its documentFragment
                 fragment.appendChild(tooltip);
             };
+            // adds the onmouseover event on the node
             node.addEventListener('mouseover', function(event) {
                 var parentNode, nextNode;
                 event.preventDefault();
                 parentNode = this.parentNode;
                 nextNode = this.nextSibling;
+                // creates a clone of the generic documentFragment, during the first onmouseover
                 if(typeof fragment !== 'object') {
                     fragment = self.fragment.cloneNode(true);
                     tooltip = fragment.firstChild;
+                    // adds the text content of the tooltip (based on the node title attribute)
                     tooltip.firstChild.nodeValue = this.title;
                     closer = tooltip.getElementsByTagName('button')[0];
+                    // adds the onmouseout event on the node or the click event on the x button (if exists)
                     if(typeof closer === 'object') {
                         closer.addEventListener('click', close);
                     }
@@ -72,6 +80,7 @@ var TooltipManager = (function () {
                 }
                 tooltip.style.left = event.pageX + 'px';
                 tooltip.style.top = event.pageY + 'px';
+                // appends the node to the document
                 if(typeof nextNode === 'object') {
                     parentNode.insertBefore(tooltip, nextNode);
                 }
